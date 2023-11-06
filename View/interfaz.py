@@ -26,7 +26,7 @@ class HotelApp:
     def __init__(self, root):
         self.root = root
         self.root.title("Sistema de Reservas de Hotel")
-        self.root.attributes('-fullscreen', True)  # Hacer que la ventana sea de pantalla completa
+        self.root.attributes('-fullscreen', True)  
 
         self.usuario_actual = None
         self.fecha_ingreso = None
@@ -38,7 +38,6 @@ class HotelApp:
             Habitacion(3, "Suite", 200)
         ]
 
-        # Configurar el fondo de color crema
         self.root.configure(bg="#E6E6FA")
 
         self.label_info_hotel = tk.Label(root, text="Información del Hotel El Parche de los Sueños:", font=("Helvetica", 25, "bold"))
@@ -204,13 +203,9 @@ class HotelApp:
         respuesta = messagebox.askquestion("Confirmación de Reserva", mensaje + "\n\n¿Desea cancelar la reserva?")
 
         if respuesta == "yes":
-            # Aquí puedes agregar el código para cancelar la reserva
-            # Por ejemplo, eliminar la reserva de la lista de reservas del usuario
-            self.usuario_actual.reservas.pop()  # Esto elimina la última reserva, puedes adaptarlo a tus necesidades
+            self.usuario_actual.reservas.pop() 
             messagebox.showinfo("Información", "Reserva cancelada.")
         else:
-            # El usuario ha decidido continuar con la reserva
-            # Aquí puedes agregar el código para continuar con la reserva
             messagebox.showinfo("Información", "Reserva confirmada. ¡Disfruta de tu estancia!")
 
 if __name__ == "__main__":
